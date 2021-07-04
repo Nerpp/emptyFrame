@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+{% import "macroForm\\form.twig" as forms %}
+
+
+{% block header %}
+<div class="container">
+	<div class="row">
+		<div class="col-12 text-center">
+			<h1>Inscription</h1>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block section %}
+<div class="container">
+	<div class="d-flex flex-wrap justify-content-center text-center">
+		<form name="{{ current_page }}Formulaire" action="index.php" method="post" class="was-validated">
+			<div class="">
+				<p>
+					{{ forms.input('mail','votre identifiant adresse mail',User.mail|default(''),'texte') }}
+				</p>
+				{% if Err.mail|length > 0 %}
+					<div class="">
+						<p>
+							<span class="alert alert-danger">{{ Err.mail }}</span>
+						</p>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="">
+				<p>
+					{{ forms.input('pseudonyme','votre pseudonyme',User.pseudonyme|default(''),'texte') }}
+				</p>
+				{% if Err.pseudonyme|length > 0 %}
+					<div class="">
+						<p>
+							<span class="alert alert-danger">{{ Err.pseudonyme }}</span>
+						</p>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="">
+				<p>
+					{{ forms.input('password','votre mot de passe',User.password|default(''),'password') }}
+				</p>
+				{% if Err.password|length > 0 %}
+					<div class="">
+						<p>
+							<span class="alert alert-danger">{{ Err.password }}</span>
+						</p>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="">
+				<p>
+					{{ forms.input('passwordConfirm','confirmer votre mot de passe',User.passwordConfirm|default(''),'password') }}
+				</p>
+				{% if Err.passwordConfirm|length > 0 %}
+					<div class="">
+						<p>
+							<span class="alert alert-danger">{{ Err.passwordConfirm }}</span>
+						</p>
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="">
+				<p>
+					<button type="submit" class="btn btn-primary">Soumettre</button>
+				</p>
+				<input type="hidden" name="p" id="page" value="userRegistration">
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

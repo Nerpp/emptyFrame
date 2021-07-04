@@ -1,0 +1,2 @@
+Le vendredi 05 mars 11:00 am 2021, l'exception   Erreur critique ! dans le fichier : [0]  C:\wamp64\www\affichageServeurPerso\src\Config\Exception\Exception.php à la ligne 6
+Le vendredi 05 mars 11:01 am 2021, l'exception   Erreur critique ! dans le fichier : [0]  C:\wamp64\www\affichageServeurPerso\src\Config\Exception\Exception.php à la ligne 6
