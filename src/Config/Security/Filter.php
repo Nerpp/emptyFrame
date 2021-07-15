@@ -29,13 +29,14 @@ class Filter
             'mail'    => FILTER_VALIDATE_EMAIL,
         );
 
+        
         switch ($requestType) {
             case 'GET':
                 $this->_aParameters =  filter_input_array(INPUT_GET, $args);
                 if (!empty($this->_aParameters)) {
                     //je netttoie les variables non utilisé avec array_filter
                     $this->_aParameters = array_filter($this->_aParameters);
-                    var_dump($this->_aParameters);
+                    var_dump($this->_aParameters['p']);
                     return;
                 }
                 $this->_aParameters = [];

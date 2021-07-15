@@ -1,9 +1,8 @@
 <?php
 namespace App\Config\Router;
 
-// use App\Controller\UserRegistration;
 
-class Router extends AbstractRouter {
+class Router extends AbstractRouter{
 
     protected function router(){
 
@@ -13,6 +12,10 @@ class Router extends AbstractRouter {
 
             case 'index':
             
+                break;
+            
+            case 'gestion':
+                
                 break;
 
             case 'userRegistration':
