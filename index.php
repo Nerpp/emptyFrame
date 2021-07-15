@@ -7,6 +7,7 @@ require dirname(__FILE__).'/vendor/autoload.php';
 // require_once 'src\Config\Exception\Exception.php';
 
 // pour ajouter de nouvelle classe à l\'autoload composer dump-autoload --optimize
+use App\Config\Exception\ExceptionCustom;
 use App\Config\AdministrationTemplates\TemplatesDisplay;
 // use App\Config\Exception\ExceptionCustom;
 
@@ -14,11 +15,11 @@ use App\Config\AdministrationTemplates\TemplatesDisplay;
 
 $displayView = new TemplatesDisplay();
 
-// try{
+try{
 $displayView->showTemplate();
-// }
-// catch (\ErrorException $e)
-// {
-//     (new ExceptionCustom())->enregistrementErreur($e);
+}
+catch (\ErrorException $e)
+{
+    (new ExceptionCustom())->enregistrementErreur($e);
    
-// }
+}

@@ -2,7 +2,6 @@
 namespace App\Config\Router;
 
 use App\Config\Security\Filter;
-
 use App\Controller\UserRegistration;
 
 
